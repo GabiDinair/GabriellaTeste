@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    
+    <div class="algoritmo">
+        <h1 class="documentH1">Exercício</h1>
+        <label for="valorA">Valor A:</label>
+        <input type="text" id="valorA" required><br><br>
+        <label for="valorB">Valor B:</label>
+        <input type="text" id="valorB" required><br><br><br>
+        <p>Escolha Um Dos Operadores Abaixo:</p>
+        <label for="Operador">Operadores: (%, *, -, +, /) :</label>
+        <input type="text" id="Operador" required><br><br>
+        <div class="button-dc">
+            <button onclick="calcularDOM()">Resultado</button>
+        </div>
+        <p id="resultado32" class="resultado">Resultado: </p>
+    </div>
+    <br>
+
+    <script src="app.js"></script>
+    <script>
+        function calcularDOM() {
+            let a = parseFloat(document.getElementById("valorA").value);      
+            let b = parseFloat(document.getElementById("valorB").value);  
+            let operador = document.getElementById("Operador").value;
+            let resultado = document.getElementById("resultado32");
+            
+            let calcResult = calcular(a, b, operador);
+            resultado.innerHTML = "Resultado: " + calcResult;
+        }
+    </script>
+</body>
+</html>
